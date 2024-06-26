@@ -61,7 +61,11 @@ app.get("/posts/:postId",async (req, res) =>{
 
 
 mongoose.connect("mongodb+srv://shampooDove:blogSphere@blogsphere.bx5s8zd.mongodb.net/blogDB").then(()=>{
-  app.listen(3000, function() {
-    console.log("Server started @ http://localhost:3000");
+  let port = process.env.PORT;
+  if (port == null || port === "") {
+    port = 3000;
+  }
+  app.listen(port, function() {
+    console.log("Server started");
   });
 })
