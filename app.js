@@ -59,9 +59,9 @@ app.get("/posts/:postId",async (req, res) =>{
   await res.render("post",{title:post.title, content:post.content})
 });
 
-mongoose.connect("mongodb://localhost:27017/blogDB").then(()=>{
+
+mongoose.connect("mongodb+srv://shampooDove:blogSphere@blogsphere.bx5s8zd.mongodb.net/blogDB").then(()=>{
   app.listen(3000, function() {
     console.log("Server started @ http://localhost:3000");
   });
 })
-
